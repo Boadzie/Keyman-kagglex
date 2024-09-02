@@ -8,7 +8,6 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi_htmx import htmx, htmx_init
 from groq import Groq
-from pydantic import BaseModel
 
 from config import Settings
 
@@ -24,10 +23,6 @@ Your response should be in the format: ["keyword1", "keyword2", "keyword3", ...]
 <end_of_turn>
 <start_of_turn>model
 """
-
-
-class Input(BaseModel):
-    job_description: str
 
 
 @app.get("/", response_class=HTMLResponse)
