@@ -23,19 +23,22 @@
 </head>
 
 <body>
-    <main class="conatiner mx-auto px-5 py-4">
-        <h1 class="text-5xl font-bold text-center my-2">Keyman</h1>
+    <main class="conatiner mx-auto px-24 py-4">
+        <h1
+            class="text-6xl font-bold text-center my-2 bg-gradient-to-r from-pink-500 via-slate-500 to-yellow-500 bg-clip-text text-transparent">
+            Keyman
+        </h1>
 
-        <section class="m-auto flex flex-col gap-5">
+        <section class="m-auto flex flex-col gap-5 mt-5">
             <form method="POST" class="m-auto w-1/2">
                 <textarea name="job_description"
-                    class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-50 focus:border-transparent shadow-sm text-gray-700 resize-none"
+                    class="text-lg w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-50 focus:border-transparent shadow-sm text-gray-700 resize-none"
                     rows="6" placeholder="Paste the job description Here..."></textarea>
                 <button type="submit" hx-post="/extract" hx-target="#keyword_list"
                     class=" px-3 py-1 text-white bg-green-500 rounded-md hover:bg-green-600">Extract</button>
 
             </form>
-            <section id="keyword_list" class="w-full mt-5 flex flex-wrap gap-2"></section>
+            <section id="keyword_list" class="w-full mt-14 flex flex-wrap gap-2"></section>
         </section>
     </main>
 </body>
