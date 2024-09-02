@@ -5,14 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet">
     <title>Keyman</title>
+    <style>
+        html,
+        body {
+            font-family: "SUSE", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+
+        }
+    </style>
 </head>
 
 <body>
     <main class="conatiner mx-auto px-5 py-4">
-        <h1 class="text-5xl font-bold text-center my-2">Welcome to Keyman</h1>
-        <p class="text-lg text-red-500">{{message}}</p>
+        <h1 class="text-5xl font-bold text-center my-2">Keyman</h1>
+
+        <section class="m-auto flex flex-col gap-5">
+            <form method="POST" class="m-auto w-1/2">
+                <textarea name="job_description"
+                    class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-50 focus:border-transparent shadow-sm text-gray-700 resize-none"
+                    rows="6" placeholder="Paste the job description Here..."></textarea>
+                <button type="submit" hx-post="/extract" hx-target="#keyword_list"
+                    class=" px-3 py-1 text-white bg-green-500 rounded-md hover:bg-green-600">Extract</button>
+
+            </form>
+            <section id="keyword_list" class="w-full mt-5 flex flex-wrap gap-2"></section>
+        </section>
     </main>
 </body>
 
