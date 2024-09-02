@@ -19,6 +19,27 @@
             font-style: normal;
 
         }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            /* Light grey */
+            border-top: 16px solid #3498db;
+            /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
@@ -34,11 +55,13 @@
                 <textarea name="job_description"
                     class="text-lg w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-50 focus:border-transparent shadow-sm text-gray-700 resize-none"
                     rows="6" placeholder="Paste the job description Here..."></textarea>
-                <button type="submit" hx-post="/extract" hx-target="#keyword_list"
+                <button type="submit" hx-post="/extract" hx-target="#keyword_list" hx-indicator="#loader"
                     class=" px-3 py-1 text-white bg-green-500 rounded-md hover:bg-green-600">Extract</button>
 
             </form>
-            <section id="keyword_list" class="w-full mt-14 flex flex-wrap gap-2"></section>
+            <section id="keyword_list" class="w-full mt-14 flex flex-wrap gap-2">
+                <div id="loader"></div>
+            </section>
         </section>
     </main>
 </body>
