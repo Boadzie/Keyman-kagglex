@@ -1,5 +1,7 @@
 # Keyman
 
+![keyman](keyman.png)
+
 > Keyman is a FastAPI-based application designed to assist jobseekers by extracting job-relevant keywords from job descriptions. These keywords can be used to enhance CVs, making them more tailored to specific job postings.
 
 ## Features
