@@ -1,0 +1,5 @@
+fastapi==0.111.0
+uvicorn==0.30.6
+groq==0.10.0
+fastapi_htmx==0.4.3
+pydantic_settings==2.4.0
