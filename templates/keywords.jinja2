@@ -1,7 +1,10 @@
-<div id="keyword_list" class="m-auto w-full justify-center items-center">
-    {% for key in keywords %}
-    <span class="badge text-lg justify-center">
-        {{ key }}
-    </span>
-    {% endfor %}
+<div id="keyword_list" class="mt-8 text-center">
+    <h2 class="text-2xl font-bold mb-4">Extracted Keywords:</h2>
+    <div id="keyword_list" class="flex flex-wrap justify-center gap-2">
+        {% for key in keywords %}
+        <span class="inline-block bg-teal-100 text-teal-800 text-lg font-medium px-4 py-2 rounded-full">
+            {{ key }}
+        </span>
+        {% endfor %}
+    </div>
 </div>
